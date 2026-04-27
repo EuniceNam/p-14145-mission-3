@@ -1,10 +1,9 @@
 package com.back;
-import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) {
-        QuoteApp quoteApp = new QuoteApp();
-        quoteApp.run();
+        App app = new App();
+        app.run();
     }
 }

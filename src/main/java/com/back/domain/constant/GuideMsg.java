@@ -1,4 +1,4 @@
-package com.back;
+package com.back.domain.constant;
 
 // 출력 스트링 모음
 public enum GuideMsg {
@@ -22,4 +22,8 @@ public enum GuideMsg {
 
     final String value;
     GuideMsg(String value) {this.value = value;}
+
+    public String getValue() {
+        return value;
+    }
 }
