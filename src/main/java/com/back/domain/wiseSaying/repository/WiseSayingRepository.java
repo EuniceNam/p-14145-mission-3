@@ -8,9 +8,7 @@ import java.util.LinkedList;
 public class WiseSayingRepository {
     private final LinkedList<WiseSaying> wiseSayings = new LinkedList<>();
 
-    public WiseSayingRepository() {
-
-    }
+    public WiseSayingRepository() {}
     public int create(String quote, String author) {
         wiseSayings.addFirst(new WiseSaying(quote, author));
         return WiseSaying.getLastQuoteNo();

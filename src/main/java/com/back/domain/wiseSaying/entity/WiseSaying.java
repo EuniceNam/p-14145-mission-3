@@ -19,4 +19,6 @@ public class WiseSaying {
     public void setQuote(String quote) { this.quote = quote;}
     public void setAuthor(String author) {this.author = author.isEmpty() ? "입력없음": author;}
     public boolean compareNo(int i) {return (quoteId == i);}
+
+    public static void resetLastQuoteNoForTest() {lastQuoteNo = 0;}
 }

@@ -10,20 +10,25 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class SystemControllerTest {
     @Test
-    @DisplayName("종료")
-    void t11() {
+    @DisplayName("1: 종료")
+    void t1() {
         final String out = AppTestRunner.run("""
                 종료
                 """);
 
         assertThat(out)
-                .contains("아니 앱의 종료는 어케??");
+                .isEqualTo("""
+                        == 명언 앱 ==
+                        명령)\s""");
     }
 
     @Test
-    @DisplayName("없는명령")
-    void t12() {
-        final String out = AppTestRunner.run("이상한문자열");
+    @DisplayName("1-1: 없는명령")
+    void t11() {
+        final String out = AppTestRunner.run("""
+                이상한명령
+                종료
+                """);
 
         assertThat(out)
                 .contains("잘못된 명령입니다. 다시 입력해주세요. (예시 - 등록 / 목록 / 삭제?id=숫자 / 수정?id=숫자 / 종료)\n");
