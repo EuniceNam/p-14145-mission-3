@@ -51,9 +51,10 @@ public class SystemController {
     }
 
     public void run() {
+        String input;
         while (true) {
             System.out.print(GuideMsg.CMD.getValue());
-            String input = sc.nextLine();
+            input = sc.nextLine();
             CmdMsg currentCmd = from(input);
             switch (currentCmd) {
                 case NONE -> System.out.print(GuideMsg.ERROR.getValue());
