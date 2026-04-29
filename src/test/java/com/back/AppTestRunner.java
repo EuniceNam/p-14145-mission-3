@@ -9,11 +9,12 @@ import java.util.Scanner;
 public class AppTestRunner {
     public static String run(String input) {
         Scanner scanner = TestUtil.genScanner(input);
-
         ByteArrayOutputStream output = TestUtil.setOutToByteArray();
-        new App(scanner).run();
-        WiseSaying.resetLastQuoteNoForTest();
 
+        AppContext.renew(scanner);
+        new App().run();
+
+        WiseSaying.resetLastQuoteNoForTest();
         return output.toString();
     }
 }

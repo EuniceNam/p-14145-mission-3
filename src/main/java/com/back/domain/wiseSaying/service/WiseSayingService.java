@@ -6,7 +6,7 @@ import com.back.domain.wiseSaying.repository.WiseSayingRepository;
 import java.util.Iterator;
 
 public class WiseSayingService {
-    WiseSayingRepository wiseSayingRepository;
+    private final WiseSayingRepository wiseSayingRepository;
 
     public WiseSayingService(WiseSayingRepository wiseSayingRepository) {
         this.wiseSayingRepository = wiseSayingRepository;

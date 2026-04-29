@@ -1,4 +1,5 @@
 package com.back.domain.wiseSaying.controller;
+
 import com.back.domain.constant.GuideMsg;
 import com.back.domain.system.controller.SystemController;
 import com.back.domain.wiseSaying.service.WiseSayingService;
@@ -6,8 +7,8 @@ import com.back.domain.wiseSaying.service.WiseSayingService;
 import java.util.Scanner;
 
 public class WiseSayingController {
-    Scanner sc;
-    WiseSayingService wiseSayingService;
+    private final Scanner sc;
+    private final WiseSayingService wiseSayingService;
 
     public WiseSayingController(Scanner sc, WiseSayingService wiseSayingService) {
         this.sc = sc;

@@ -2,8 +2,6 @@ package com.back.domain.system.controller;
 
 import com.back.domain.constant.GuideMsg;
 import com.back.domain.wiseSaying.controller.WiseSayingController;
-import com.back.domain.wiseSaying.repository.WiseSayingRepository;
-import com.back.domain.wiseSaying.service.WiseSayingService;
 
 import java.util.Scanner;
 
@@ -11,7 +9,7 @@ import static com.back.domain.system.controller.SystemController.CmdMsg.*;
 
 // 입력받을 명령어
 public class SystemController {
-    Scanner sc;
+    private final Scanner sc;
     private final WiseSayingController wiseSayingController;
     static int qid = -1; // 다른 방법?
     public enum CmdMsg {
@@ -42,12 +40,9 @@ public class SystemController {
         }
     }
 
-    public SystemController(Scanner sc) {
+    public SystemController(Scanner sc, WiseSayingController wiseSayingController) {
         this.sc = sc;
-        // SystemController에서 프로그램 시작 전에 객체들을 준비해두는 것이 도구가 사용자 명령에 맞게 사용하기 쉽다고 함
-        WiseSayingRepository wiseSayingRepository = new WiseSayingRepository();
-        WiseSayingService wiseSayingService = new WiseSayingService(wiseSayingRepository);
-        this.wiseSayingController = new WiseSayingController(sc, wiseSayingService);
+        this.wiseSayingController = wiseSayingController;
     }
 
     public void run() {

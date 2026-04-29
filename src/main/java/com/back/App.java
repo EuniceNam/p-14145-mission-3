@@ -9,9 +9,9 @@ public class App {
     private final Scanner sc;
     private final SystemController systemController;
 
-    public App(Scanner sc) {
-        this.sc = sc;
-        systemController = new SystemController(sc);
+    public App() {
+        this.sc = AppContext.scanner;
+        systemController = AppContext.systemController;
     }
 
     public void run() {
