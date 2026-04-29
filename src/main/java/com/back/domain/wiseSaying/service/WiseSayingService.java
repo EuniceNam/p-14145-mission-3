@@ -24,7 +24,7 @@ public class WiseSayingService {
         StringBuilder quoteListSB = new StringBuilder();
         while(it.hasNext()) {
             q = it.next();
-            quoteListSB.append(q.getQuoteNo()).append(" / ").append(q.getAuthor())
+            quoteListSB.append(q.getQuoteId()).append(" / ").append(q.getAuthor())
                     .append(" / ").append(q.getQuote()).append("\n");
         }
         return quoteListSB.toString();

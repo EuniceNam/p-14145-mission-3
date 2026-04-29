@@ -1,9 +1,15 @@
 package com.back.domain.wiseSaying.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
 public class WiseSaying {
     static int lastQuoteNo = 0;
     int quoteId;
+    @Setter
     String quote;
+    @Setter
     String author;
 
     public WiseSaying(String quote, String author) {
@@ -12,12 +18,6 @@ public class WiseSaying {
         this.author = author.isEmpty() ? "입력없음": author;
     }
 
-    public static int getLastQuoteNo() { return lastQuoteNo;}
-    public int getQuoteNo() { return quoteId;}
-    public String getQuote() { return quote;}
-    public String getAuthor() { return author;}
-    public void setQuote(String quote) { this.quote = quote;}
-    public void setAuthor(String author) {this.author = author.isEmpty() ? "입력없음": author;}
     public boolean compareNo(int i) {return (quoteId == i);}
 
     public static void resetLastQuoteNoForTest() {lastQuoteNo = 0;}
