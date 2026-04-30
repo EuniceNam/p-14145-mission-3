@@ -18,6 +18,8 @@ public class WiseSaying {
         this.author = author.isEmpty() ? "입력없음": author;
     }
 
+    public static int getLastQuoteNo() { return lastQuoteNo;}
+
     public boolean compareNo(int i) {return (quoteId == i);}
 
     public static void resetLastQuoteNoForTest() {lastQuoteNo = 0;}
